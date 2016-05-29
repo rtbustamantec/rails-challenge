@@ -7,13 +7,15 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get 'sign_up' => 'users#new'
-  resource :users, only: [:create]
+  post 'sign_up' => 'users#create'
 
   get 'profile' => 'users#show'
   get 'profile/edit' => 'users#edit'
   put 'profile' => 'users#update'
 
   post 'verify' => 'users#verify'
+
+  delete 'sign_out' => 'user_sessions#destroy'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

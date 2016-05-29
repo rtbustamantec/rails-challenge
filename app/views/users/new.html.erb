@@ -1,6 +1,6 @@
 <div id="send-verification-code">
   <h3>Type your mobile number</h3>
-  <%= form_for @user, remote: true do |f| %>
+  <%= form_for @user, url: sign_up_path, remote: true do |f| %>
       <div>
         <%= f.text_field :mobile_number %>
       </div>
