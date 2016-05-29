@@ -1,0 +1,5 @@
+$('#send-verification-code').hide()
+$('#verify-verification-code').show()
+$('#hidden_mobile_number').val('<%= @user.mobile_number %>')
+$('#verify-mobile-number').html('<%= @user.mobile_number %>')
+$('#mobile_number').focus()

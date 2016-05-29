@@ -1,0 +1,24 @@
+<div id="send-verification-code">
+  <h3>Type your mobile number</h3>
+  <%= form_for @user, remote: true do |f| %>
+      <div>
+        <%= f.text_field :mobile_number %>
+      </div>
+      <%= f.submit 'VERIFY', class: 'btn btn-primary ' %>
+  <% end %>
+</div>
+
+<div id="verify-verification-code">
+  <h3>We send a 4 digit verification code to <span id="verify-mobile-number"></span>. Enter it below.</h3>
+  <%= form_tag verify_path, remote: true do %>
+      <%= hidden_field_tag 'hidden_mobile_number', '' %>
+      <div class="form-group">
+        <%= text_field_tag :verification_code %>
+      </div>
+      <%= submit_tag 'SUBMIT', class: 'btn btn-primary' %>
+  <% end %>
+</div>
+
+<div id="status-box" class="alert alert-warning">
+  <p id="status-message">Sorry, that wasn't the right verification code.</p>
+</div>

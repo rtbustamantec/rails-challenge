@@ -1,0 +1,6 @@
+$('#status-box').hide()
+<% if @user.is_verified %>
+
+<% else %>
+  $('#status-box').fadeToggle()
+<% end %>
