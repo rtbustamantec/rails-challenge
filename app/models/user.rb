@@ -1,6 +1,11 @@
 class User < ActiveRecord::Base
   validates :mobile_number, uniqueness: true
 
+  acts_as_authentic do |c|
+    c.validate_email_field = false
+    c. validate_login_field = false
+  end
+
   def generate_verification_code
     self.verification_code = rand(0000...9999).to_s.rjust(4, '0')
     self.is_verified = false

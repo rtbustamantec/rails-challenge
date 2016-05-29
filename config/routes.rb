@@ -6,7 +6,13 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
-  resource :users, only: [:new, :create]
+  get 'sign_up' => 'users#new'
+  resource :users, only: [:create]
+
+  get 'profile' => 'users#show'
+  get 'profile/edit' => 'users#edit'
+  put 'profile' => 'users#update'
+
   post 'verify' => 'users#verify'
 
   # Example of regular route:

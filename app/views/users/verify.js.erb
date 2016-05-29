@@ -1,6 +1,6 @@
 $('#status-box').hide()
 <% if @user.is_verified %>
-
+  window.location.href = '<%= profile_path %>'
 <% else %>
   $('#status-box').fadeToggle()
 <% end %>
