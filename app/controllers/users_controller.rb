@@ -50,14 +50,4 @@ class UsersController < ApplicationController
     def edit_users_params
       params.require(:user).permit(:name, :email, :photo)
     end
-
-    def not_authorized
-      unless logged_in?
-        redirect_to root_path
-      end
-    end
-
-    def not_authenticated
-      redirect_to profile_path if logged_in?
-    end
 end
