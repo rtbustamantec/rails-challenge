@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   validates :mobile_number, uniqueness: true
+  mount_uploader :photo, PhotoUploader
 
   acts_as_authentic do |c|
     c.validate_email_field = false
