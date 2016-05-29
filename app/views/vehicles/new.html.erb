@@ -1,0 +1,31 @@
+<h1>New Vehicle</h1>
+
+<div>
+  <%= form_for @vehicle do |f| %>
+      <%= render 'shared/errors', object: @vehicle %>
+
+      <div >
+        <img src="<%= @vehicle.photo.url %>" style="width: 10%; height: 10%"/>
+      </div>
+      <div>
+        <%= f.file_field :photo %>
+      </div>
+      <div>
+        <%= f.label :year %>
+        <%= f.text_field :year %>
+      </div>
+      <div>
+        <%= f.label :make %>
+        <%= f.text_field :make %>
+      </div>
+      <div>
+        <%= f.label :model %>
+        <%= f.text_field :model %>
+      </div>
+      <div >
+        <%= f.label :license_plate %>
+        <%= f.text_field :license_plate  %>
+      </div>
+      <%= submit_tag 'ADD VEHICLE' %>
+  <% end %>
+</div>

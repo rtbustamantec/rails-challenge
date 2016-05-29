@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160529205000) do
+ActiveRecord::Schema.define(version: 20160529224556) do
 
   create_table "users", force: :cascade do |t|
     t.string   "mobile_number"
@@ -24,5 +24,18 @@ ActiveRecord::Schema.define(version: 20160529205000) do
     t.datetime "updated_at",        null: false
     t.string   "persistence_token"
   end
+
+  create_table "vehicles", force: :cascade do |t|
+    t.string   "photo"
+    t.integer  "year"
+    t.string   "make"
+    t.string   "model"
+    t.string   "license_plate"
+    t.integer  "user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "vehicles", ["user_id"], name: "index_vehicles_on_user_id"
 
 end

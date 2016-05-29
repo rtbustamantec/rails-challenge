@@ -1,0 +1,6 @@
+<li>
+  <%= vehicle.year %> | <%= vehicle.make %> |
+  <%= vehicle.model %> | <%= vehicle.license_plate %>
+  <%= link_to 'EDIT', edit_vehicle_path(vehicle) %> -
+  <%= link_to 'DELETE', vehicle, :method => :delete %>
+</li>

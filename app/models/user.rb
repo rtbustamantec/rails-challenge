@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :vehicles, dependent: :destroy
   validates :mobile_number, uniqueness: true
   mount_uploader :photo, PhotoUploader
 

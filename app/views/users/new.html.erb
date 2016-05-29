@@ -4,7 +4,7 @@
       <div>
         <%= f.text_field :mobile_number %>
       </div>
-      <%= f.submit 'VERIFY', class: 'btn btn-primary ' %>
+      <%= f.submit 'VERIFY' %>
   <% end %>
 </div>
 
@@ -15,10 +15,10 @@
       <div class="form-group">
         <%= text_field_tag :verification_code %>
       </div>
-      <%= submit_tag 'SUBMIT', class: 'btn btn-primary' %>
+      <%= submit_tag 'SUBMIT'%>
   <% end %>
 </div>
 
-<div id="status-box" class="alert alert-warning">
+<div id="status-box">
   <p id="status-message">Sorry, that wasn't the right verification code.</p>
 </div>

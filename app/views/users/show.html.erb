@@ -6,3 +6,11 @@
   <li><%= current_user.mobile_number %></li>
   <li><%= link_to 'EDIT', profile_edit_path %></li>
 </ul>
+
+<h3>Vehicles </h3>
+<ul>
+  <% current_user.vehicles.each do |vehicle| %>
+      <%= render 'vehicles/vehicle', vehicle: vehicle %>
+  <% end %>
+</ul>
+<%= link_to 'CREATE', new_vehicle_path %>
